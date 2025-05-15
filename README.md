@@ -32,11 +32,11 @@ sort -t'|' -k1,1 -u /tmp/limpio.txt > /tmp/limpio_sin_duplicados.txt
 ```bash
 
 COPY personas1(rut, nombre, edad, direccion)
-FROM '/tmp/limpio.txt'
+FROM '/tmp/limpio_sin_duplicados.txt'
 WITH (FORMAT csv, DELIMITER '|');
 
 COPY personas2(rut, nombre, edad, direccion)
-FROM '/tmp/limpio.txt'
+FROM '/tmp/limpio_sin_duplicados.txt'
 WITH (FORMAT csv, DELIMITER '|');
 ```
 **LISTO AMBAS DEBERIAN TENER 49750490 ALGO ASI**
